@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head> <!-- ===( CODE AASHU )=== -->
+    <meta charset="UTF-8">
+    <title>CODE AASHU | Responsive Animated Product Card</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="product-card">
+    <div class="logo-cart">
+      <img src="images/logo.jpg" alt="logo">
+      <i class='bx bx-shopping-bag'></i>
+    </div>
+    <div class="main-images">
+      <img id="blue" class="blue active" src="images/blue.png" alt="blue">
+      <img id="pink" class="pink" src="images/pink.png" alt="blue">
+      <img id="yellow" class="yellow" src="images/yellow.png" alt="blue">
+    </div>
+    <div class="shoe-details">
+      <span class="shoe_name">ADDIDAS GAZE ZX</span>
+      <p>Lorem ipsum dolor sit lorenm i amet, consectetur adipisicing elit. Eum, ea, ducimus!</p>
+      <div class="stars">
+        <i class='bx bxs-star' ></i>
+        <i class='bx bxs-star' ></i>
+        <i class='bx bxs-star' ></i>
+        <i class='bx bxs-star' ></i>
+        <i class='bx bx-star' ></i>
+      </div>
+    </div>
+    <div class="color-price">
+      <div class="color-option">
+        <span class="color">Colour:</span>
+        <div class="circles">
+          <span class="circle blue active"  id="blue"></span>
+          <span class="circle pink " id="pink"></span>
+          <span class="circle yellow " id="yellow"></span>
+        </div>
+      </div>
+      <div class="price">
+        <span class="price_num">₹2000</span>
+        <span class="price_letter">Two Thousand only</span>
+      </div>
+    </div>
+    <div class="button">
+      <div class="button-layer"></div>
+      <button>Add To Cart</button>
+    </div>
+  </div>
+  <script>
+   let circle = document.querySelector(".color-option");
+
+   circle.addEventListener("click", (e)=>{
+     let target = e.target;
+     if(target.classList.contains("circle")){
+       circle.querySelector(".active").classList.remove("active");
+       target.classList.add("active");
+       document.querySelector(".main-images .active").classList.remove("active");
+       document.querySelector(`.main-images .${target.id}`).classList.add("active");
+     }
+   });
+  </script>
+    </body>
+</html>
